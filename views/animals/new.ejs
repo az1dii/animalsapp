@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+
+  <body>
+    <%- include("../partials/header.ejs") %>
+
+    <main>
+      <div>
+        <form action="/animals" method="post">
+          <fieldset>
+            <legend>Create a New Animal</legend>
+            <label
+              >Name:
+              <input type="text" name="name" placeholder="enter animal name" />
+            </label>
+            <label>
+              COLOR:
+              <input type="text" name="color" placeholder="enter animal color" />
+            </label>
+            <label>
+              Grown:
+              <input type="checkbox" name="adult" />
+            </label>
+            <input type="submit" value="CREATE NEW ANIMAL" />
+          </fieldset>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
