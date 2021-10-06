@@ -9,8 +9,8 @@ const {Schema, model} = mongoose
 
 const animalSchema = new Schema({
     name: String,
-    color: String,
-    readyToEat: Boolean,
+    lifeExpectancy: Number,
+    extinct: Boolean,
     username: String
 })
 

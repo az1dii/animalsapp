@@ -13,12 +13,13 @@ mongoose.connection.on("open", () => {
 
   // create array of starter
   const startAnimals = [
-    { name: "Whale", color: "Blue", adult: false },
-    { name: "Frog", color: "Green", adult: false },
-    { name: "Elephant", color: "Grey", adult: false },
-    { name: "Goat", color: "White", adult: false },
-    { name: "Beer", color: "Brown", adult: false },
-  ];
+    { name: "Whale", lifeExpectancy: 100, extinct: false },
+    { name: "Frog", lifeExpectancy: 14, extinct: false },
+    { name: "Elephant", lifeExpectancy: 56, extinct: false },
+    { name: "Goat", lifeExpectancy: 18, extinct: false },
+    { name: "Bear", lifeExpectancy: 25, extinct: false },
+  ]
+
 
   // Delete all animals
   Animal.deleteMany({}, (err, data) => {

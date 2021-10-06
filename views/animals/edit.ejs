@@ -16,15 +16,15 @@
                             placeholder="enter animal name"/>
                         </label>
                         <label>
-                            COLOR:<input
+                            LIFE EXPECTANCY:<input
                             type="text"
                             name="color"
-                            value="<%= animal.color %>"
-                            placeholder="enter animal name"/>
+                            value="<%= animal.lifeExpectancy %>"
+                            placeholder="enter animal lfie expectancy"/>
                         </label>
                         <label>
-                            ADULT :<input type="checkbox" name="adult" <%=
-                            animal.adult ? "checked" : "" %> />
+                            EXTINCTED :<input type="checkbox" name="extinct" <%=
+                            animal.extinct ? "checked" : "" %> />
                         </label>
                     </fieldset>
                     <input type="submit" value="Update <%= animal.name %>" />

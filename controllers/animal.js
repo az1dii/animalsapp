@@ -28,11 +28,11 @@ router.use((req, res, next) => {
 router.get("/seed", (req, res) => {
     // array of starter animals
   const startAnimals = [
-    { name: "Whale", color: "Blue", adult: false },
-    { name: "Frog", color: "Green", adult: false },
-    { name: "Elephant", color: "Grey", adult: false },
-    { name: "Goat", color: "White", adult: false },
-    { name: "Beer", color: "Brown", adult: false },
+    { name: "Whale", lifeExpectancy: 100, extinct: false },
+    { name: "Frog", lifeExpectancy: 14, extinct: false },
+    { name: "Elephant", lifeExpectancy: 56, extinct: false },
+    { name: "Goat", lifeExpectancy: 18, extinct: false },
+    { name: "Bear", lifeExpectancy: 25, extinct: false },
   ]
 
   // Delete All Animals
@@ -58,7 +58,7 @@ router.get("/new", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    req.body.adult = req.body.adult === "on" ? true : false
+    req.body.extinct = req.body.extinct === "on" ? true : false
     // add the username to req.body
     req.body.username = req.session.username
     // create the new animal
@@ -83,7 +83,7 @@ router.get("/:id/edit", (req, res) => {
 router.put("/:id", (req, res) =>{
     // get the id param
     const id = req.params.id
-    req.body.adult = req.body.adult === "on" ? true : false
+    req.body.extinct = req.body.extinct === "on" ? true : false
     //update the animal
     Animal.findByIdAndUpdate(id, req.body, {new: true}, (err, animal) => {
         //redirect back to main page
